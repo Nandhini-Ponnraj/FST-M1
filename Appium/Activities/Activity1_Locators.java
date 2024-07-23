@@ -1,6 +1,4 @@
 package Activities;
-package activities;
-
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -16,7 +14,7 @@ public class Activity1_Locators {
 
     @BeforeClass
     public void setUp() throws MalformedURLException {
-        //Set Capabilities
+        
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("android");
         options.setAutomationName("UiAutomator2");
@@ -24,19 +22,19 @@ public class Activity1_Locators {
         options.setAppActivity(".cal.CalculatorActivity");//".cal.CalculatorActivity
         options.noReset();
 
-        //Set serverUrl
+       
         URL serverURL = new URL("http://localhost:4723/wd/hub");
 
-        //Initialize driver
+       
         driver = new AndroidDriver(serverURL, options);
     }
 
     @Test
     public void multiplyTest() {
         driver.findElement(AppiumBy.id("btn_7_s")).click();
-        //Find  "*" and tap it
+      
         driver.findElement(AppiumBy.accessibilityId("Multiply")).click();
-        //Find number 5 and tap it
+      
         driver.findElement(AppiumBy.id("btn_5_s")).click();
         //Find "=" and tap it
         driver.findElement(AppiumBy.accessibilityId("equals")).click();
